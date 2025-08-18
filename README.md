@@ -1,12 +1,35 @@
-# React + Vite
+# AI AutoFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI AutoFlow is a modern SaaS platform that helps businesses automate customer interactions, lead generation, and appointment booking using advanced AI-powered voice agents—boosting efficiency, conversions, and customer satisfaction 24/7.
 
-Currently, two official plugins are available:
+## Features
+- AI Voice Agents for 24/7 customer engagement
+- Automated lead capture and qualification
+- Appointment scheduling and reminders
+- CRM and calendar integrations
+- Conversion-focused, responsive landing page
+- Modern UI/UX with React and Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Akshith-cdr/RYZEx-AI.git
+   cd RYZEx-AI
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Expanding the ESLint configuration
+## Deployment
+Build for production:
+```bash
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## License
+MIT
