@@ -542,9 +542,6 @@ body, .aiaf-root {
   font-size: 0.95rem;
 }
 
-/* Responsive */
-
-/* --- Improved Responsive Styles --- */
 @media (max-width: 1200px) {
   .container {
     max-width: 100vw;
@@ -655,7 +652,6 @@ body, .aiaf-root {
   }
 }
 
-/* Animations */
 .aiaf-service-card,
 .aiaf-step-card,
 .aiaf-pricing-card,
