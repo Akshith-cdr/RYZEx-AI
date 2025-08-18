@@ -1,0 +1,673 @@
+:root {
+  --aiaf-primary: #7f5fff;
+  --aiaf-secondary: #32cafe;
+  --aiaf-bg: #0e1021;
+  --aiaf-card-bg: rgba(255,255,255,0.04);
+  --aiaf-gradient: linear-gradient(90deg, #7f5fff 0%, #32cafe 100%);
+  --aiaf-accent: #ff5fa2;
+  --aiaf-radius: 18px;
+  --aiaf-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+}
+
+body, .aiaf-root {
+  background: var(--aiaf-bg);
+  color: #f5f6fa;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.aiaf-header {
+  background: rgba(14,16,33,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--aiaf-shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s;
+}
+
+.aiaf-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.aiaf-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--aiaf-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aiaf-nav-menu {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.aiaf-nav-menu a {
+  color: #f5f6fa;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.aiaf-nav-menu a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--aiaf-gradient);
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.aiaf-nav-menu a:hover::after {
+  width: 100%;
+}
+
+.aiaf-btn {
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+  border-radius: 40px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 16px #7f5fff33;
+  display: inline-block;
+}
+
+.aiaf-btn-cta {
+  background: var(--aiaf-gradient);
+  color: #fff;
+}
+
+.aiaf-btn-cta:hover,
+.aiaf-btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px) scale(1.03);
+}
+
+.aiaf-btn-primary {
+  background: var(--aiaf-gradient);
+  color: #fff;
+}
+
+.aiaf-btn-secondary {
+  background: transparent;
+  color: var(--aiaf-primary);
+  border: 2px solid var(--aiaf-primary);
+}
+
+.aiaf-btn-secondary:hover {
+  background: var(--aiaf-primary);
+  color: #fff;
+}
+
+.aiaf-hero {
+  width: 100vw;
+  max-width: 100vw;
+  background: linear-gradient(120deg, #181c2b 60%, #1a1f2f 100%);
+  padding: 160px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aiaf-gradient {
+  background: var(--aiaf-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.aiaf-hero-sub {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 2.5rem;
+  opacity: 0.85;
+}
+
+.aiaf-benefits {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.aiaf-benefit-card {
+  background: var(--aiaf-card-bg);
+  border-radius: var(--aiaf-radius);
+  padding: 1.2rem 2rem;
+  min-width: 220px;
+  box-shadow: var(--aiaf-shadow);
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.aiaf-benefit-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.aiaf-cta-row {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.aiaf-social-proof {
+  background: #181c2b;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.aiaf-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2.5rem 0 0;
+  flex-wrap: wrap;
+}
+
+.aiaf-stat-num {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--aiaf-primary);
+  
+}
+
+.aiaf-stat-label {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-top: 0.5rem;
+}
+
+.aiaf-services {
+  padding: 100px 0 80px;
+}
+
+.aiaf-section-title {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 3.5rem;
+  font-weight: 800;
+  color: var(--aiaf-primary);
+  letter-spacing: 1px;
+}
+
+.aiaf-services-grid {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aiaf-service-card {
+  background: var(--aiaf-card-bg);
+  border-radius: var(--aiaf-radius);
+  box-shadow: var(--aiaf-shadow);
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  max-width: 370px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aiaf-service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 40px #7f5fff33;
+}
+
+.aiaf-service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--aiaf-accent);
+  text-shadow: 0 0 8px #ff5fa2;
+}
+
+.aiaf-service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--aiaf-primary);
+}
+
+.aiaf-service-card ul {
+  list-style: none;
+  margin: 1.2rem 0 1.5rem;
+  padding: 0;
+  text-align: left;
+}
+
+.aiaf-service-card ul li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  color: #f5f6fa;
+}
+
+.aiaf-service-card ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--aiaf-primary);
+  font-weight: bold;
+}
+
+.aiaf-how {
+  background: #151926;
+  padding: 100px 0 80px;
+}
+
+.aiaf-steps {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.aiaf-step-card {
+  background: var(--aiaf-card-bg);
+  border-radius: var(--aiaf-radius);
+  box-shadow: var(--aiaf-shadow);
+  padding: 2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1rem;
+}
+
+.aiaf-step-num {
+  width: 64px;
+  height: 64px;
+  background: var(--aiaf-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 0 16px #7f5fff;
+}
+
+.aiaf-pricing {
+  padding: 100px 0 80px;
+}
+
+.aiaf-pricing-grid {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.aiaf-pricing-card {
+  background: var(--aiaf-card-bg);
+  border-radius: var(--aiaf-radius);
+  box-shadow: var(--aiaf-shadow);
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  max-width: 370px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aiaf-pricing-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px #7f5fff33;
+}
+
+.aiaf-pricing-featured {
+  border: 2px solid var(--aiaf-primary);
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.aiaf-popular-badge {
+  background: var(--aiaf-accent);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 12px #ff5fa233;
+}
+
+.aiaf-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--aiaf-primary);
+  margin: 1.2rem 0 0.5rem;
+}
+
+.aiaf-price span {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin-left: 0.2rem;
+}
+
+.aiaf-pricing-card ul {
+  list-style: none;
+  margin: 2rem 0 1.5rem;
+  padding: 0;
+  text-align: left;
+}
+
+.aiaf-pricing-card ul li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  color: #f5f6fa;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.aiaf-pricing-card ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--aiaf-primary);
+  font-weight: bold;
+}
+
+.aiaf-testimonials {
+  background: #181c2b;
+  padding: 100px 0 80px;
+}
+
+.aiaf-testimonials-grid {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.aiaf-testimonial {
+  background: var(--aiaf-card-bg);
+  border-radius: var(--aiaf-radius);
+  box-shadow: var(--aiaf-shadow);
+  padding: 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 370px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1rem;
+}
+
+.aiaf-testimonial-text {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: #f5f6fa;
+}
+
+.aiaf-testimonial-author {
+  font-weight: 700;
+  color: var(--aiaf-primary);
+}
+
+.aiaf-testimonial-company {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+.aiaf-final-cta {
+  background: var(--aiaf-gradient);
+  color: #fff;
+  padding: 100px 0 80px;
+  text-align: center;
+}
+
+.aiaf-final-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+}
+
+.aiaf-final-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2.2rem;
+  opacity: 0.92;
+}
+
+.aiaf-guarantees {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.aiaf-guarantee {
+  background: rgba(255,255,255,0.08);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 12px #7f5fff33;
+}
+
+.aiaf-footer {
+  background: #13151e;
+  color: #f5f6fa;
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.aiaf-footer-content {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aiaf-footer-section {
+  min-width: 220px;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+.aiaf-footer-section h3 {
+  margin-bottom: 1rem;
+  color: var(--aiaf-primary);
+  font-weight: 700;
+}
+
+.aiaf-footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.aiaf-footer-section ul li {
+  padding: 0.3rem 0;
+}
+
+.aiaf-footer-section ul li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.aiaf-footer-section ul li a:hover {
+  color: var(--aiaf-primary);
+}
+
+.aiaf-footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #222;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+
+/* --- Improved Responsive Styles --- */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aiaf-services-grid,
+  .aiaf-pricing-grid,
+  .aiaf-testimonials-grid,
+  .aiaf-footer-content,
+  .aiaf-benefits,
+  .aiaf-steps,
+  .aiaf-guarantees {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .aiaf-section-title {
+    font-size: 2.1rem;
+  }
+  .aiaf-hero {
+    padding: 120px 0 60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .aiaf-header {
+    padding: 0.5rem 0;
+  }
+  .aiaf-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.7rem 0;
+  }
+  .aiaf-logo {
+    font-size: 1.3rem;
+  }
+  .aiaf-nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: #181c2b;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem 0;
+    z-index: 200;
+    box-shadow: 0 8px 24px #0002;
+  }
+  .aiaf-nav-menu.open {
+    display: flex;
+  }
+  .aiaf-nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 201;
+  }
+  .aiaf-btn-cta {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .aiaf-hero h1 {
+    font-size: 1.5rem;
+  }
+  .aiaf-benefit-card,
+  .aiaf-service-card,
+  .aiaf-step-card,
+  .aiaf-pricing-card,
+  .aiaf-testimonial {
+    min-width: unset;
+    max-width: 100vw;
+    padding: 1.2rem 1rem;
+  }
+  .aiaf-footer-content {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .aiaf-header {
+    padding: 0.2rem 0;
+  }
+  .aiaf-logo {
+    font-size: 1.1rem;
+  }
+  .aiaf-btn,
+  .aiaf-btn-cta {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+  .aiaf-section-title {
+    font-size: 1.3rem;
+  }
+  .aiaf-hero {
+    padding: 80px 0 30px;
+  }
+  .aiaf-footer {
+    padding: 40px 0 15px;
+  }
+}
+
+/* Animations */
+.aiaf-service-card,
+.aiaf-step-card,
+.aiaf-pricing-card,
+.aiaf-testimonial {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aiaf-fadeInUp 0.7s ease-out forwards;
+}
+
+@keyframes aiaf-fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
