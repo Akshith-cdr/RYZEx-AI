@@ -47,6 +47,7 @@ body, .aiaf-root {
   letter-spacing: 2px;
   background: var(--aiaf-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
@@ -138,6 +139,7 @@ body, .aiaf-root {
 .aiaf-gradient {
   background: var(--aiaf-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
