@@ -1,6 +1,6 @@
-# AI AutoFlow
+# RYZEx AI
 
-AI AutoFlow is a modern SaaS platform that helps businesses automate customer interactions, lead generation, and appointment booking using advanced AI-powered voice agents—boosting efficiency, conversions, and customer satisfaction 24/7.
+RYZEx AI is a modern SaaS platform that helps businesses automate customer interactions, lead generation, and appointment booking using advanced AI-powered voice agents—boosting efficiency, conversions, and customer satisfaction 24/7.
 
 ## Features
 - AI Voice Agents for 24/7 customer engagement
