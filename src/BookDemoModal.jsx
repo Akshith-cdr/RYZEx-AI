@@ -1,44 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function BookDemoModal({ open, onClose }) {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    purpose: "",
-    contactMethod: "",
-    hearAbout: "",
-  });
-  const [status, setStatus] = useState("");
+  const [state, handleSubmit] = useForm("xwpqdpgy");
 
   if (!open) return null;
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-    const res = await fetch("/api/book-demo", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-    if (res.ok) {
-      setStatus("Success! We'll contact you soon.");
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        purpose: "",
-        contactMethod: "",
-        hearAbout: "",
-      });
-    } else {
-      setStatus("Error. Please try again.");
-    }
-  };
 
   return (
     <div className="modal-overlay">
@@ -47,85 +13,89 @@ export default function BookDemoModal({ open, onClose }) {
           ×
         </button>
         <h2>Book a Free Demo</h2>
-        <form onSubmit={handleSubmit} className="modal-form">
-          <label>
-            Full Name
-            <input
-              name="name"
-              required
-              value={form.name}
-              onChange={handleChange}
+        {state.succeeded ? (
+          <p>Thank you! We'll contact you soon.</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="modal-form">
+            <label>
+              Full Name
+              <input name="name" required />
+            </label>
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+            <label>
+              Email
+              <input name="email" type="email" required />
+            </label>
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
-          </label>
-          <label>
-            Email
-            <input
-              name="email"
-              type="email"
-              required
-              value={form.email}
-              onChange={handleChange}
+
+            <label>
+              Ph-No (with country code)
+              <input name="phone" required />
+            </label>
+            <ValidationError
+              prefix="Phone"
+              field="phone"
+              errors={state.errors}
             />
-          </label>
-          <label>
-            Ph-No (with country code)
-            <input
-              name="phone"
-              required
-              value={form.phone}
-              onChange={handleChange}
+
+            <label>
+              Purpose
+              <select name="purpose" required>
+                <option value="">Select</option>
+                <option value="AI Voice Agents">AI Voice Agents</option>
+                <option value="AI Lead Generation">AI Lead Generation</option>
+              </select>
+            </label>
+            <ValidationError
+              prefix="Purpose"
+              field="purpose"
+              errors={state.errors}
             />
-          </label>
-          <label>
-            Purpose
-            <select
-              name="purpose"
-              required
-              value={form.purpose}
-              onChange={handleChange}
+
+            <label>
+              Preferred contact method
+              <select name="contactMethod" required>
+                <option value="">Select</option>
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
+              </select>
+            </label>
+            <ValidationError
+              prefix="Contact Method"
+              field="contactMethod"
+              errors={state.errors}
+            />
+
+            <label>
+              How did you hear about us?
+              <select name="hearAbout" required>
+                <option value="">Select</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Referral">Referral</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Google">Google</option>
+              </select>
+            </label>
+            <ValidationError
+              prefix="Hear About"
+              field="hearAbout"
+              errors={state.errors}
+            />
+
+            <button
+              type="submit"
+              className="aiaf-btn aiaf-btn-primary"
+              disabled={state.submitting}
             >
-              <option value="">Select</option>
-              <option value="AI Voice Agents">AI Voice Agents</option>
-              <option value="AI Lead Generation">AI Lead Generation</option>
-            </select>
-          </label>
-          <label>
-            Preferred contact method
-            <select
-              name="contactMethod"
-              required
-              value={form.contactMethod}
-              onChange={handleChange}
-            >
-              <option value="">Select</option>
-              <option value="Email">Email</option>
-              <option value="Phone">Phone</option>
-            </select>
-          </label>
-          <label>
-            How did you hear about us?
-            <select
-              name="hearAbout"
-              required
-              value={form.hearAbout}
-              onChange={handleChange}
-            >
-              <option value="">Select</option>
-              <option value="Social Media">Social Media</option>
-              <option value="Referral">Referral</option>
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Google">Google</option>
-            </select>
-          </label>
-          <button
-            type="submit"
-            className="aiaf-btn aiaf-btn-primary"
-            disabled={status === "Sending..."}
-          >
-            Submit
-          </button>
-          <div style={{ marginTop: 12, minHeight: 24 }}>{status}</div>
-        </form>
+              Submit
+            </button>
+          </form>
+        )}
       </div>
       <style>{`
         .modal-overlay {
